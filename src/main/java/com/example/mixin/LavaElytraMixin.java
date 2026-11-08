@@ -9,11 +9,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(LivingEntity.class)
 public abstract class LavaElytraMixin {
 
+    // Разрешаем активировать элитры, даже если игрок в лаве
     @Inject(method = "isInLava", at = @At("HEAD"), cancellable = true, require = 0)
-    private void allowLavaFly(CallbackInfoReturnable<Boolean> cir) {
+    private void allowLavaFlyStart(CallbackInfoReturnable<Boolean> cir) {
         LivingEntity entity = (LivingEntity) (Object) this;
+        
+        // Если игрок пытается взлететь (нажимает пробел в падении/прыжке в лаве) или уже летит
         if (entity.isFallFlying()) {
-            cir.setReturnValue(false);
+            cir.setReturnValue(false); // Игнорируем лаву во время полета
         }
     }
 }

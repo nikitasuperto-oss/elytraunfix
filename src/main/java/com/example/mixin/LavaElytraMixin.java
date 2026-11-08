@@ -1,6 +1,6 @@
 package com.example.mixin;
 
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.entity.LivingEntity; // Обновленный путь к LivingEntity в новых версиях
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

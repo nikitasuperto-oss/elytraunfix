@@ -1,35 +1,26 @@
 {
-	"schemaVersion": 1,
-	"id": "elytra",
-	"version": "${version}",
-	"name": "elytra",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/elytra/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.example.Elytra"
-		],
-		"client": [
-			"com.example.client.ElytraClient"
-		]
-	},
-	"mixins": [
-		"elytra.mixins.json",
-		{
-			"config": "elytra.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabric-api": "*"
-	}
+  "schemaVersion": 1,
+  "id": "elytra",
+  "version": "${version}",
+  "name": "elytra",
+  "description": "Lava Elytra Mod",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/"
+  },
+  "license": "CC0-1.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.Elytra"
+    ]
+  },
+  "mixins": [
+    "elytra.mixins.json"
+  ],
+  "depends": {
+    "fabric-api": "*"
+  }
 }

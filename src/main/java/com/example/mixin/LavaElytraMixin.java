@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(LivingEntity.class)
 public abstract class LavaElytraMixin {
 
-    @Inject(method = "isInLava", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "isInLava", at = @At("HEAD"), cancellable = true, require = 0)
     private void allowLavaFly(CallbackInfoReturnable<Boolean> cir) {
         LivingEntity entity = (LivingEntity) (Object) this;
         if (entity.isFallFlying()) {
